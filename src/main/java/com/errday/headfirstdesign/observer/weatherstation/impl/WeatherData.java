@@ -1,7 +1,7 @@
-package com.errday.headfirstdesign.chapter1.weatherstation.impl;
+package com.errday.headfirstdesign.observer.weatherstation.impl;
 
-import com.errday.headfirstdesign.chapter1.weatherstation.Observer;
-import com.errday.headfirstdesign.chapter1.weatherstation.Subject;
+import com.errday.headfirstdesign.observer.weatherstation.Observer;
+import com.errday.headfirstdesign.observer.weatherstation.Subject;
 
 import java.util.ArrayList;
 import java.util.List;

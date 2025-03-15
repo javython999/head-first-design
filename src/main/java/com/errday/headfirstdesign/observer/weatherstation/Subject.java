@@ -1,4 +1,4 @@
-package com.errday.headfirstdesign.chapter1.weatherstation;
+package com.errday.headfirstdesign.observer.weatherstation;
 
 
 
