@@ -7,7 +7,7 @@ public class HeatIndexDisplay implements Observer, DisplayElement {
 
     private float temperature;
     private float humidity;
-    private WeatherData weatherData;
+    private final WeatherData weatherData;
 
     public HeatIndexDisplay(WeatherData weatherData) {
         this.weatherData = weatherData;
@@ -15,9 +15,9 @@ public class HeatIndexDisplay implements Observer, DisplayElement {
     }
 
     @Override
-    public void update(float temperature, float humidity, float pressure) {
-        this.temperature = temperature;
-        this.humidity = humidity;
+    public void update() {
+        this.temperature = weatherData.getTemperature();
+        this.humidity = weatherData.getHumidity();
         display();
     }
 
