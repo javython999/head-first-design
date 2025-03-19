@@ -1,34 +1,37 @@
 package com.errday.headfirstdesign.factory.pizza;
 
+import com.errday.headfirstdesign.factory.ingredient.cheese.Cheese;
+import com.errday.headfirstdesign.factory.ingredient.clams.Clam;
+import com.errday.headfirstdesign.factory.ingredient.dough.Dough;
+import com.errday.headfirstdesign.factory.ingredient.pepperoni.Pepperoni;
+import com.errday.headfirstdesign.factory.ingredient.sauce.Sauce;
+import com.errday.headfirstdesign.factory.ingredient.veggies.Veggies;
 import lombok.Getter;
-
-import java.util.ArrayList;
-import java.util.List;
+import lombok.Setter;
 
 public abstract class Pizza {
 
     @Getter
+    @Setter
     String name;
-    String dough;
-    String sauce;
-    List<String> toppings = new ArrayList<>();
 
-    void prepare() {
-        System.out.println(name + " 피자 준비중...");
-        System.out.println("도우를 돌리는 중...");
-        System.out.println("소스를 뿌리는 중...");
-        System.out.println("토핑을 올리는 중...");
-        for (String topping : toppings) {
-            System.out.println(topping);
-        }
-    }
-    void bake() {
+    Dough dough;
+    Sauce sauce;
+    Veggies[] veggies;
+    Cheese cheese;
+    Pepperoni pepperoni;
+    Clam clam;
+
+
+    public abstract void prepare();
+
+    public void bake() {
         System.out.println("175도에서 25분간 굽기");
     }
-    void cut() {
+    public void cut() {
         System.out.println("8조각으로 커팅");
     }
-    void box() {
+    public void box() {
         System.out.println("상자에 피자 담기");
     }
 }

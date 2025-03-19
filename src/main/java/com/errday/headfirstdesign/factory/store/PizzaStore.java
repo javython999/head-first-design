@@ -1,4 +1,6 @@
-package com.errday.headfirstdesign.factory.pizza;
+package com.errday.headfirstdesign.factory.store;
+
+import com.errday.headfirstdesign.factory.pizza.Pizza;
 
 public abstract class PizzaStore {
 

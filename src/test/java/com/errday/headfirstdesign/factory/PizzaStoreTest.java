@@ -1,9 +1,9 @@
 package com.errday.headfirstdesign.factory;
 
-import com.errday.headfirstdesign.factory.pizza.ChicagoPizzaStore;
-import com.errday.headfirstdesign.factory.pizza.NyPizzaStore;
+import com.errday.headfirstdesign.factory.store.ChicagoPizzaStore;
+import com.errday.headfirstdesign.factory.store.NyPizzaStore;
 import com.errday.headfirstdesign.factory.pizza.Pizza;
-import com.errday.headfirstdesign.factory.pizza.PizzaStore;
+import com.errday.headfirstdesign.factory.store.PizzaStore;
 import org.junit.jupiter.api.Test;
 
 public class PizzaStoreTest {
@@ -14,11 +14,10 @@ public class PizzaStoreTest {
         Pizza nyCheesePizza = nyPizzaStore.orderPizza("cheese");
         System.out.println("홍길동이 주문한 " + nyCheesePizza.getName());
 
-        System.out.println("\n");
+        System.out.println();
 
         PizzaStore chicagoPizzaStore = new ChicagoPizzaStore();
         Pizza chicagoCheesePizza = chicagoPizzaStore.orderPizza("cheese");
-        System.out.println(chicagoCheesePizza);
         System.out.println("김길동이 주문한 " + chicagoCheesePizza.getName());
     }
 }
