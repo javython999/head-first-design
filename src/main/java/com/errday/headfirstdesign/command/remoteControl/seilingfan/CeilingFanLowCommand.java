@@ -2,19 +2,19 @@ package com.errday.headfirstdesign.command.remoteControl.seilingfan;
 
 import com.errday.headfirstdesign.command.remoteControl.Command;
 
-public class CeilingFanHighCommand implements Command {
+public class CeilingFanLowCommand implements Command {
 
     private final CeilingFan ceilingFan;
     private int previousSpeed;
 
-    public CeilingFanHighCommand(CeilingFan ceilingFan) {
+    public CeilingFanLowCommand(CeilingFan ceilingFan) {
         this.ceilingFan = ceilingFan;
     }
 
     @Override
     public void execute() {
         previousSpeed = ceilingFan.getSpeed();
-        ceilingFan.high();
+        ceilingFan.medium();
     }
 
     @Override
@@ -29,6 +29,5 @@ public class CeilingFanHighCommand implements Command {
         } else if (previousSpeed == CeilingFan.OFF) {
             ceilingFan.off();
         }
-
     }
 }
