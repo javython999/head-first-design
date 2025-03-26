@@ -1,33 +1,27 @@
 package com.errday.headfirstdesign.iterator;
 
 import java.util.Iterator;
+import java.util.List;
 
 public class Waitress {
 
-    private final Menu pancakeHouseMenu;
-    private final Menu dinnerMenu;
-    private final Menu cafeMenu;
+    private final List<Menu> menus;
 
-    public Waitress(Menu pancakeHouseMenu, Menu dinnerMenu, Menu cafeMenu) {
-        this.pancakeHouseMenu = pancakeHouseMenu;
-        this.dinnerMenu = dinnerMenu;
-        this.cafeMenu = cafeMenu;
+    public Waitress(List<Menu> menus) {
+        this.menus = menus;
     }
 
     public void printMenu() {
-        System.out.println("메뉴\n-----\n아침 메뉴");
-        printMenu(pancakeHouseMenu.createIterator());
-
-        System.out.println("\n점심 메뉴");
-        printMenu(dinnerMenu.createIterator());
-
-        System.out.println("\n저녁 메뉴");
-        printMenu(cafeMenu.createIterator());
+        Iterator<Menu> iterator = menus.iterator();
+        while (iterator.hasNext()) {
+            Menu menu = iterator.next();
+            printMenu(menu.createIterator());
+        }
     }
 
     private void printMenu(Iterator<MenuItem> iterator) {
         while (iterator.hasNext()) {
-            MenuItem menuItem = (MenuItem) iterator.next();
+            MenuItem menuItem = iterator.next();
             StringBuffer stringBuffer = new StringBuffer();
             stringBuffer.append(menuItem.getName())
                     .append(", ")

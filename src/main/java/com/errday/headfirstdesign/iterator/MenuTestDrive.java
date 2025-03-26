@@ -1,13 +1,11 @@
 package com.errday.headfirstdesign.iterator;
 
+import java.util.List;
+
 public class MenuTestDrive {
 
     public static void main(String[] args) {
-        Menu pancakeHouseMenu = new PancakeHouseMenu();
-        Menu dinnerMenu = new DinnerMenu();
-        Menu cafeMenu = new CafeMenu();
-
-        Waitress waitress = new Waitress(pancakeHouseMenu, dinnerMenu, cafeMenu);
+        Waitress waitress = new Waitress(List.of(new PancakeHouseMenu(), new DinnerMenu(), new CafeMenu()));
         waitress.printMenu();
     }
 }
