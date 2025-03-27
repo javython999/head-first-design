@@ -32,4 +32,9 @@ public class NoQuarterState implements State {
     public void dispense() {
         System.out.println(INSERT_QUARTER_MESSAGE);
     }
+
+    @Override
+    public void refill() {
+
+    }
 }

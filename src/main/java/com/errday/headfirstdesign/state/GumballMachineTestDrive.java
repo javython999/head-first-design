@@ -1,9 +1,19 @@
 package com.errday.headfirstdesign.state;
 
+import com.errday.headfirstdesign.state.monitor.GumballMachineMonitor;
+
 public class GumballMachineTestDrive {
 
     public static void main(String[] args) {
-        GumballMachine gumballMachine = new GumballMachine(5);
+
+        if (args.length < 0) {
+            System.out.println("GumballMachine <name> <inventory>");
+            System.exit(1);
+        }
+
+
+        GumballMachine gumballMachine = new GumballMachine(args[0], Integer.parseInt(args[1]));
+        GumballMachineMonitor monitor = new GumballMachineMonitor(gumballMachine);
         System.out.println(gumballMachine);
 
         gumballMachine.insertQuarter();
@@ -23,16 +33,16 @@ public class GumballMachineTestDrive {
         gumballMachine.turnCrank();
         gumballMachine.ejectQuarter();
 
-        System.out.println(gumballMachine);
+        gumballMachine.insertQuarter();
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
 
-        gumballMachine.insertQuarter();
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-
-        System.out.println(gumballMachine);
+        monitor.report();
     }
 }
