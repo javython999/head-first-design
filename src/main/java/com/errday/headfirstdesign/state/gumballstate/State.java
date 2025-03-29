@@ -1,4 +1,4 @@
-package com.errday.headfirstdesign.state;
+package com.errday.headfirstdesign.state.gumballstate;
 
 public interface State {
 

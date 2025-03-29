@@ -1,7 +1,6 @@
 package com.errday.headfirstdesign.state.gumballstate;
 
 import com.errday.headfirstdesign.state.GumballMachine;
-import com.errday.headfirstdesign.state.State;
 
 public class SoldState implements State {
 
