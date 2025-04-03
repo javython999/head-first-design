@@ -104,4 +104,3 @@ public class BeatModel implements BeatModelInterface, Runnable {
 	}
 
 }
-
